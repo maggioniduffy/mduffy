@@ -18,7 +18,7 @@ export default function Home() {
         <Link
           href={"files/cv.pdf"}
           target="_blank"
-          className="bg-myyellow-300 shadow rounded-full p-5 my-3 font-bold"
+          className="bg-myyellow-300 shadow rounded-full p-5 my-3 font-bold text-center"
         >
           My Resume
         </Link>
