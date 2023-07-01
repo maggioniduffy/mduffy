@@ -16,13 +16,13 @@ const Header = () => {
         <div className="w-fit flex">
           {" "}
           <a href="https://github.com/maggioniduffy" target={"_blank"}>
-            <Image src={github} />
+            <Image src={github} alt="github" />
           </a>
           <a
             href="https://www.linkedin.com/in/maggioniduffy/"
             target={"_blank"}
           >
-            <Image src={linkedin} />
+            <Image src={linkedin} alt="linkedin" />
           </a>
         </div>
       </div>
@@ -31,6 +31,7 @@ const Header = () => {
           src={perfil}
           placeholder="blur"
           className="h-36 w-36 rounded-full bg-myyellow-300"
+          alt="me"
         />
       </div>
     </header>

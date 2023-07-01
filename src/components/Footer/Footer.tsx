@@ -9,10 +9,10 @@ const Footer = () => {
       <div className="w-fit px-3 flex">
         {" "}
         <a href="https://github.com/maggioniduffy" target={"_blank"}>
-          <Image src={github} />
+          <Image src={github} alt="github" />
         </a>
         <a href="https://www.linkedin.com/in/maggioniduffy/" target={"_blank"}>
-          <Image src={linkedin} />
+          <Image src={linkedin} alt="linkedin" />
         </a>
       </div>
     </footer>

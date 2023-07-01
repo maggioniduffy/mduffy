@@ -11,7 +11,7 @@ export default function Home() {
           <h3 className="text-2xl font-medium"> About Me </h3>
           <p className="mr-2">
             {" "}
-            I'm Faustino Maggioni Duffy, software developer and data analyst
+            I am Faustino Maggioni Duffy, software developer and data analyst
             from Neuquen, Argentina.
           </p>
         </div>
