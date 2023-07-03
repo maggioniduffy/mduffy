@@ -30,7 +30,7 @@ const Header = () => {
         <Image
           src={perfil}
           placeholder="blur"
-          className="h-36 w-36 rounded-full bg-myyellow-300"
+          className="h-fit w-36 rounded-full bg-myyellow-300"
           alt="me"
         />
       </div>

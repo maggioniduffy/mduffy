@@ -8,7 +8,7 @@ export default function Home() {
       <Header />
       <section className="mx-9 my-4 space-x-5 place-items-center flex h-fit justify-between">
         <div>
-          <h3 className="text-2xl font-medium"> About Me </h3>
+          <h3 className="text-2xl font-medium mt-4"> About Me </h3>
           <p className="mr-2">
             {" "}
             I am Faustino Maggioni Duffy, software developer and data analyst
