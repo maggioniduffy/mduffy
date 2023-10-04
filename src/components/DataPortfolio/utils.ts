@@ -34,24 +34,24 @@ export const projects: Project[] = [
     name: "Medical Data Visualizer",
     file: "/projects/medical_data_visualizer.html",
     link: "https://www.kaggle.com/code/faustinomagg/freecodecamp-medical-data-visualizer",
-    bg: "bg-myyellow-500",
+    bg: "bg-myyellow-400",
   },
   {
     name: "Sea Level Predictor",
     file: "/projects/sea_level_predictor.html",
     link: "https://www.kaggle.com/code/faustinomagg/sea-level-predictor",
-    bg: "bg-myyellow-600",
+    bg: "bg-myyellow-300",
   },
   {
     name: "Time Series Visualizer",
     file: "/projects/time_series_visualizer.html",
     link: "https://www.kaggle.com/code/faustinomagg/time-series-visualizer",
-    bg: "bg-myyellow-700",
+    bg: "bg-myyellow-200",
   },
   {
     name: "Titanic Prediction",
     file: "/projects/titanic-prediction.html",
     link: "https://www.kaggle.com/code/faustinomagg/titanic-prediction",
-    bg: "bg-myyellow-800",
+    bg: "bg-myyellow-100",
   },
 ];

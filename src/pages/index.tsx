@@ -17,8 +17,7 @@ export default function Home() {
           My goal is to deliver nice and useful products and to constantly deep into new technlogies.
           </p> */}
         {/* </div> */}
-        <h3 className="font-bold text-yellow-500"> Want to know a little more? </h3>
-        <div className="flex md:space-x-2 flex-wrap">
+        {/* <div className="flex md:space-x-2 flex-wrap">
         <Link
           href={"files/cv.pdf"}
           target="_blank"
@@ -32,7 +31,7 @@ export default function Home() {
         >
           Get in touch
         </Link>
-        </div>
+        </div> */}
       </section>
       <Footer />
     </main>

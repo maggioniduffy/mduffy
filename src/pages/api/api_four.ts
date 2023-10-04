@@ -7,9 +7,9 @@ const handler = async (req: any, res:any) => {
       case "POST": {
         //Do some thing
         await sendMail(
-          "TEST",
-          "dontkillme@bunnyfiedlabs.com",
-          "THI IS A TEST FOR MY MEDIUM USERS"
+          req.subject,
+          process.env.NODEMAILER_MAIL+"",
+          req.otpText
         );
         res.status(200).send("Success");
         break;

@@ -1,16 +1,52 @@
 import Image from "next/image";
 import github from "../../../public/assets/github.png";
 import linkedin from "../../../public/assets/linkedin.png";
+import { useState } from "react";
 
 const Footer = () => {
+  const [name,setName] = useState('')
+  const [mail,setMail] = useState('')
+  const [msg,setMessage] = useState('')
 
-  const aux = async () => {
+  const clear = () => {
+    setName('')
+    setMail('')
+    setMessage('')
+  }
+
+  const aux = async (e:any) => {
+    e.preventDefault()
     try {
-      const data = await fetch('/api/api_four')
+      const subj = 'Message from ' +name+ " mail: " + mail
+      const data = await fetch('/api/api_four', {
+        method: 'POST',
+        body: JSON.stringify({
+          subject: subj, toEmail:mail, otpText:msg
+        })
+      })
       const res = await data.json()
       console.log(res)
     } catch (error) {
 
+    } finally {
+
+      //clear()
+    }
+  }
+
+  const update = (type:string,value:string) => {
+    switch (type) {
+      case 'name':
+        setName(value);
+        return;
+      case 'mail':
+        setMail(value);
+        return;
+      case 'msj':
+        setMessage(value);
+        return
+      default:
+        return
     }
   }
   return (
@@ -19,13 +55,13 @@ const Footer = () => {
       <h3 className="text-6xl font-bold drop-shadow"> Let's talk</h3>
       <div className="bg-mywhite w-96 h-fit border-4 rounded-xl shadow border-myyyellow-300 p-4">
         <form className="m-auto h-full flex flex-col place-items-start justify-center space-y-3 text-sm" onSubmit={aux}>
-          <p> Please tell me your name</p>
-          <input className="border rounded w-full h-12"></input>
-          <p> Your email address </p>
-          <input className="border rounded w-full h-12"></input>
-          <p> How can I help you? </p>
-          <textarea className="border rounded w-full h-44"></textarea>
-          <button type="submit" onClick={aux}> click me</button>
+          <p className="font-bold"> Please tell me your name</p>
+          <input value={name} className="border rounded w-full h-12 p-2" onChange={(e) => update('name',e.target.value)}></input>
+          <p className="font-bold"> Your email address </p>
+          <input value={mail} className="border rounded w-full h-12 p-2" onChange={(e) => update('mail',e.target.value)}></input>
+          <p className="font-bold"> How can I help you? </p>
+          <textarea value={msg} className="border rounded w-full h-44 p-2" onChange={(e) => update('msj',e.target.value)}></textarea>
+          <button type="submit" onClick={(e) => aux(e)} className="m-auto w-20 h-12 bg-myyellow-300 rounded shadow"> Send</button>
         </form>
       </div>
       <div className="w-fit px-3 flex flex-col space-x-4">
