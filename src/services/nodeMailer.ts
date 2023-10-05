@@ -9,10 +9,10 @@ export async function sendMail(subject:string, toEmail:string, otpText:string) {
       user: "apikey",
       pass: process.env.API_KEY,
     },
-    secure: true,
-    // tls: {
-    //   rejectUnauthorized: false
-    // }
+    secure: false,
+    tls: {
+      rejectUnauthorized: false
+    }
   });
 
   console.log(subject,otpText)
