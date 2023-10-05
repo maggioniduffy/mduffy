@@ -30,7 +30,7 @@ const Header = () => {
         </div> */}
       </div>
       <p className="m-2 text-xl w-full lg:w-96 my-5 lg:my-auto lg:text-right">
-          Proactive and creative, envolved in the tech world since 2019, I've never stop learning and finding my way to improve as a <b> software developer </b> or as a <b> data analyst</b>.
+          Proactive and creative, envolved in the tech world since 2019, I&lsquo;ve never stop learning and finding my way to improve as a <b> software developer </b> or as a <b> data analyst</b>.
           My goal is to deliver nice and useful products and to constantly deep into new technlogies.
           </p>
       {/* <div className="bg-mywhite bg-opacity-0 shadow-lg rounded-full overflow-hidden my-5 bg-myyellow-300">
