@@ -3,16 +3,16 @@ import nodemailer from "nodemailer"
 
 export async function sendMail(subject:string, toEmail:string, otpText:string) {
   var transporter = nodemailer.createTransport({
-    port: 25,
+    //port: 25,
     host: "smtp.sendgrid.net",
     auth: {
       user: "apikey",
       pass: process.env.API_KEY,
     },
-    secure: false,
-    tls: {
-      rejectUnauthorized: false
-    }
+    secure: true,
+    // tls: {
+    //   rejectUnauthorized: false
+    // }
   });
 
   console.log(subject,otpText)
