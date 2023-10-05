@@ -1,15 +1,18 @@
 import { sendMail } from "../../services/nodeMailer";
 
 const handler = async (req: any, res:any) => {
+  console.log("REQ: ", req.body)
   try {
-    const { method } = req;
+    const { method, body } = req;
+    const newBody = JSON.parse(body);
+    console.log("NEW BODY", newBody)
     switch (method) {
       case "POST": {
         //Do some thing
         await sendMail(
-          req.subject,
+          newBody.subject,
           process.env.NODEMAILER_MAIL+"",
-          req.otpText
+          newBody.otpText
         );
         res.status(200).send("Success");
         break;
@@ -25,6 +28,7 @@ const handler = async (req: any, res:any) => {
         break;
     }
   } catch (err:any) {
+    console.log('err in api: ', err)
     res.status(400).json({
       error_code: "api_one",
       message: err.message,

@@ -15,6 +15,8 @@ export async function sendMail(subject:string, toEmail:string, otpText:string) {
     }
   });
 
+  console.log(subject,otpText)
+
   var mailOptions = {
     from: process.env.NODEMAILER_EMAIL,
     to: process.env.NODEMAILER_EMAIL,
@@ -24,9 +26,10 @@ export async function sendMail(subject:string, toEmail:string, otpText:string) {
 
   transporter.sendMail(mailOptions, function (error:any, info:any) {
     if (error) {
+      console.log('err in transporter ', error)
       throw new Error(error);
     } else {
-      console.log("Email Sent");
+      console.log("Email Sent", mailOptions);
       return true;
     }
   });

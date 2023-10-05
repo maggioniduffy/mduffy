@@ -3,11 +3,14 @@ import github from "../../../public/assets/github.png";
 import linkedin from "../../../public/assets/linkedin.png";
 import { useState } from "react";
 
+const initStyle = 'bg-myyellow-300'
+
 const Footer = () => {
   const [name,setName] = useState('')
   const [mail,setMail] = useState('')
   const [msg,setMessage] = useState('')
-
+  const [style,setStyle] = useState(initStyle)
+  
   const clear = () => {
     setName('')
     setMail('')
@@ -16,6 +19,7 @@ const Footer = () => {
 
   const aux = async (e:any) => {
     e.preventDefault()
+    console.log(name,mail,msg)
     try {
       const subj = 'Message from ' +name+ " mail: " + mail
       const data = await fetch('/api/api_four', {
@@ -25,30 +29,32 @@ const Footer = () => {
         })
       })
       const res = await data.json()
-      console.log(res)
+      setStyle('text-mywhite bg-green')
+      setTimeout(() => {
+        setStyle(initStyle)
+      }, 2000)
+      clear()
     } catch (error) {
-
-    } finally {
-
-      //clear()
+      console.log('err', error)
+      setStyle('text-mywhite bg-red')
+      setTimeout(() => {
+        setStyle(initStyle)
+      }, 2000)
     }
   }
 
-  const update = (type:string,value:string) => {
-    switch (type) {
-      case 'name':
-        setName(value);
-        return;
-      case 'mail':
-        setMail(value);
-        return;
-      case 'msj':
-        setMessage(value);
-        return
-      default:
-        return
-    }
+  const updateName = (value: string) => {
+    setName(value);
   }
+
+  const updateMail = (value: string) => {
+    setMail(value);
+  }
+
+  const updateMessage = (value: string) => {
+    setMessage(value);
+  }
+
   return (
     <footer id="footer" className="text-gray font-medium w-full h-screen text-center mt-5 flex flex-col place-items-center justify-center space-y-8 p-14 space-x-3">
       {/* <p>Made by <b>me</b></p> */}
@@ -56,12 +62,12 @@ const Footer = () => {
       <div className="bg-mywhite w-96 h-fit border-4 rounded-xl shadow border-myyyellow-300 p-4">
         <form className="m-auto h-full flex flex-col place-items-start justify-center space-y-3 text-sm" onSubmit={aux}>
           <p className="font-bold"> Please tell me your name</p>
-          <input value={name} className="border rounded w-full h-12 p-2" onChange={(e) => update('name',e.target.value)}></input>
+          <input value={name} className="border rounded w-full h-12 p-2" onChange={(e) => updateName(e.target.value)}></input>
           <p className="font-bold"> Your email address </p>
-          <input value={mail} className="border rounded w-full h-12 p-2" onChange={(e) => update('mail',e.target.value)}></input>
+          <input value={mail} className="border rounded w-full h-12 p-2" onChange={(e) => updateMail(e.target.value)}></input>
           <p className="font-bold"> How can I help you? </p>
-          <textarea value={msg} className="border rounded w-full h-44 p-2" onChange={(e) => update('msj',e.target.value)}></textarea>
-          <button type="submit" onClick={(e) => aux(e)} className="m-auto w-20 h-12 bg-myyellow-300 rounded shadow"> Send</button>
+          <textarea value={msg} className="border rounded w-full h-44 p-2" onChange={(e) => updateMessage(e.target.value)}></textarea>
+          <button type="submit" onClick={(e) => aux(e)} className={`m-auto w-20 h-12 ${style} rounded shadow`}> Send</button>
         </form>
       </div>
       <div className="w-fit px-3 flex flex-col space-x-4">

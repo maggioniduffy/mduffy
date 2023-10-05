@@ -10,7 +10,7 @@ const Header = () => {
       <div className="flex justify-start flex-col lg:flex-row ">
       <div className="flex flex-col place-items-start m-2 lg:m-0">
         <h5 className="text-sm"> Hello there </h5>
-        <h1 className="font-bold text-7xl w-6/12"> <b className="text-myyellow-800"> I'm Faustino, </b>passionate dev & data analyst. </h1>
+        <h1 className="font-bold text-7xl w-6/12"> <b className="text-myyellow-800"> I&lsquo;m Faustino, </b>passionate dev & data analyst. </h1>
         {/* <h3 className="font-medium text-xl">
           {" "}
           Software Developer <b className="text-myyellow-300"> || </b> Data

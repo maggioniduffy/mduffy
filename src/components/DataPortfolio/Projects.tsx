@@ -43,7 +43,7 @@ export default function CustomizedAccordions() {
     };
 
   return (
-    <div className="rounded-lg overflow-hidden shadow-lg mt-2.5 w-9/12 m-5">
+    <div className="rounded-lg overflow-hidden shadow-lg mt-2.5 w-full lg:w-9/12 lg:m-5">
       {projects.map(({ name, file, link, bg }, i) => {
         const exp = "panel" + i;
         const header = "panel" + i + "d-header";
