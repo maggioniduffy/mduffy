@@ -56,10 +56,10 @@ const Footer = () => {
   }
 
   return (
-    <footer id="footer" className="text-gray font-medium w-full h-screen text-center mt-5 flex flex-col place-items-center justify-center space-y-8 p-14 space-x-3">
+    <footer id="footer" className="text-gray font-medium w-full h-screen text-center mt-5 flex flex-col place-items-center justify-center space-y-8 md:p-14">
       {/* <p>Made by <b>me</b></p> */}
       <h3 className="text-6xl font-bold drop-shadow"> Let&lsquo;s talk</h3>
-      <div className="bg-mywhite w-96 h-fit border-4 rounded-xl shadow border-myyyellow-300 p-4">
+      <div className="bg-mywhite w-full lg:w-96 h-fit border-4 rounded-xl shadow border-myyyellow-300 p-4">
         <form className="m-auto h-full flex flex-col place-items-start justify-center space-y-3 text-sm" onSubmit={aux}>
           <p className="font-bold"> Please tell me your name</p>
           <input value={name} className="border rounded w-full h-12 p-2" onChange={(e) => updateName(e.target.value)}></input>
