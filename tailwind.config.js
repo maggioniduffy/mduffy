@@ -25,8 +25,14 @@ module.exports = {
           700: "#F8FF19",
           800: "#F7FF05",
         },
+        mypink: {
+          100: "#F0D2E9",
+          300: "#F0B7D0",
+          500: "#EF9BB7",
+          600: "#EF809E",
+        },
         green: "#4BB543",
-        red: "#FC100D"
+        red: "#FC100D",
       },
     },
   },

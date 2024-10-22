@@ -44,7 +44,7 @@ export default function CustomizedAccordions() {
 
   return (
     <div className="rounded-lg overflow-hidden shadow-lg mt-2.5 w-full lg:w-9/12 lg:m-5">
-      {projects.map(({ name, file, link, bg }, i) => {
+      {projects.map(({ name, description, link, bg, image }, i) => {
         const exp = "panel" + i;
         const header = "panel" + i + "d-header";
         const content = "panel" + i + "d-content";
@@ -62,7 +62,12 @@ export default function CustomizedAccordions() {
                 </AccordionSummary>
               </div>
               <AccordionDetails>
-                <Project name={name} link={link} file={file} />
+                <Project
+                  name={name}
+                  link={link}
+                  description={description}
+                  image={image}
+                />
               </AccordionDetails>
             </Accordion>
           </div>
